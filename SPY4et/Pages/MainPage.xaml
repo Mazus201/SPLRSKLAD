@@ -13,9 +13,22 @@
             <RowDefinition Height="131*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <ListView Name="DtGrdDriverList" Height="auto"
-                      Width="auto" Grid.Row="0" Margin="30"
-                      HorizontalAlignment="Center">
+        <ListView Name="DtGrdDriverList" 
+                  Height="auto"
+                  Width="auto" 
+                  MinWidth="700" 
+                  MinHeight="300"
+                  Grid.Row="0" 
+                  Margin="30"
+                      HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListView.RenderTransform>
             <Style TargetType="{x:Type DataGridColumnHeader}">
                 <Setter Property="LayoutTransform">
                     <Setter.Value>
@@ -27,37 +40,21 @@
 
                 <GridView AllowsColumnReorder="true"
                   ColumnHeaderToolTip="Employee Information">
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding GUID}" 
-                                        Header="GUID"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding FirstName}" 
-                                        Header="Имя"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding LastName}" 
-                                            Header="Фамилия"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Patronomic}" 
-                                            Header="Отчество"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Passport}" 
-                                            Header="Пасспорт"/>
-                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding AdressReg}" 
-                                            Header="Адрес регистрации"/>
-                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding AdressLive}" 
-                                            Header="Адрес проживания"/>
-                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Company}" 
-                                                Header="Место работы"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Place}" 
-                                                Header="Должность"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Phone}" 
-                                                Header="Телефон"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Email}" 
-                                                Header="Электронная почта"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Photo}" 
-                                                Header="Фото"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Comment}" 
-                                                Header="Комментарий"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Name}" 
+                                        Header="Наименование"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Serial}" 
+                                        Header="Серийный номер"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding CostJa}" 
+                                            Header="Цена (Юань)"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding CostRub}" 
+                                            Header="Цена (рубль)"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Count}" 
+                                            Header="Кол-во на складе"/>
                 </GridView>
 
             </ListView.View>
         </ListView>
-        <!--"<StackPanel Orientation="Horizontal" Margin="30,0,0,0" 
+        <StackPanel Orientation="Horizontal" Margin="30,0,0,0" 
                         Grid.Row="1" HorizontalAlignment="Center">
             <TextBox Name="TxtFind"
                      Width="170"
@@ -66,7 +63,7 @@
                      Text="Поиск"
                      GotFocus="TxtFind_GotFocus"
                      LostFocus="TxtFind_LostFocus"
-                     SelectionChanged="TxbFind_SelectionChanged"/>
+                     SelectionChanged="TxtFind_SelectionChanged"/>
             <Button Name="btnSave" Content="Сохранить"
                         Width="120" Margin="10,0,0,0" Click="btnSave_Click"
                         Style="{StaticResource BtnStnd}"/>
@@ -81,6 +78,6 @@
                         VerticalAlignment="Center"
                         Margin="40,0,0,0" Click="btnDelete_Click"
                         Style="{StaticResource BtnBack}"/>
-        </StackPanel> -->
+        </StackPanel>
     </Grid>
 </Page>

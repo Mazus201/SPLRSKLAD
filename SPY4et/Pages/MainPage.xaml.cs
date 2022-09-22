@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SPY4et.Resourse;
+using SPY4et.Clss;
 
 namespace SPY4et.Pages
 {
@@ -23,9 +25,40 @@ namespace SPY4et.Pages
         public MainPage()
         {
             InitializeComponent();
+            DtGrdDriverList.ItemsSource = ClsFrame.Ent.MainTable.ToList();
         }
 
         private void TxtFind_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TxtFind_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TxtFind_LostFocus(object sender, RoutedEventArgs e)
         {
 
         }

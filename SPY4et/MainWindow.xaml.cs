@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SPY4et.Clss;
 using SPY4et.Pages;
+using SPY4et.Resourse;
 
 namespace SPY4et
 {
@@ -26,6 +27,8 @@ namespace SPY4et
         public MainWindow()
         {
             InitializeComponent();
+
+            ClsFrame.Ent = new ServiceParkEntities();
 
             ClsFrame.FrmBody = FrmCenter;
             FrmCenter.Navigate(new MainPage());
