@@ -5,8 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SPY4et"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        Title="SPLR" Height="450" Width="800"
+        MinHeight="450" MinWidth="800">
+    <Grid Background="{StaticResource Brush}" MouseDown="Grid_MouseDown">
+
+        <Frame Name="FrmCenter" NavigationUIVisibility="Hidden"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                Width="25" Height="25"
+                Content="x" Name="BtnBack"
+                Click="BtnBack_Click" Style="{StaticResource BtnBack}">
+        </Button>
+        <StackPanel Orientation="Horizontal" Margin="2"
+                    VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button Height="18" Width="20" VerticalAlignment="Top"
+                    Name="BtnMinimize" Click="BtnMinimize_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent">
+                            <Path x:Name="Pt" Data="M0.5,0 M0,0.5 L0.5,0.5 M0.5, 0.5 L0.5,0.5 M0.5, 0.5"
+                        Stretch="Uniform" Stroke="white" StrokeThickness="2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#FF0083FF"/>
+                                <Setter TargetName="Pt" Property="Stroke" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="20" Width="20"
+                    Name="BtnMaximize" Click="BtnMaximize_Click"
+                    Margin="5,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent">
+                            <Path x:Name="Pt" Data="m0,0 l1,1 m0,0 l1,0"
+                        Stretch="Uniform" Stroke="white" StrokeThickness="2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#FF8EFF63"/>
+                                <Setter TargetName="Pt" Property="Stroke" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Height="20" Width="20" Name="BtnClose" Click="BtnClose_Click" Margin="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" Background="Transparent">
+                            <Path x:Name="Pt" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,1"
+                        Stretch="Uniform" Stroke="white" StrokeThickness="2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="Red"/>
+                                <Setter TargetName="Pt" Property="Stroke" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

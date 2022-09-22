@@ -1,0 +1,86 @@
+﻿<Page x:Class="SPY4et.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SPY4et.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HelloWorld">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="131*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <ListView Name="DtGrdDriverList" Height="auto"
+                      Width="auto" Grid.Row="0" Margin="30"
+                      HorizontalAlignment="Center">
+            <Style TargetType="{x:Type DataGridColumnHeader}">
+                <Setter Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="270" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+                  ColumnHeaderToolTip="Employee Information">
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding GUID}" 
+                                        Header="GUID"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding FirstName}" 
+                                        Header="Имя"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding LastName}" 
+                                            Header="Фамилия"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Patronomic}" 
+                                            Header="Отчество"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Passport}" 
+                                            Header="Пасспорт"/>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding AdressReg}" 
+                                            Header="Адрес регистрации"/>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding AdressLive}" 
+                                            Header="Адрес проживания"/>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Company}" 
+                                                Header="Место работы"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Place}" 
+                                                Header="Должность"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Phone}" 
+                                                Header="Телефон"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Email}" 
+                                                Header="Электронная почта"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Photo}" 
+                                                Header="Фото"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Comment}" 
+                                                Header="Комментарий"/>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <!--"<StackPanel Orientation="Horizontal" Margin="30,0,0,0" 
+                        Grid.Row="1" HorizontalAlignment="Center">
+            <TextBox Name="TxtFind"
+                     Width="170"
+                     Height="25"
+                     Margin="0, 1, 0, 0"
+                     Text="Поиск"
+                     GotFocus="TxtFind_GotFocus"
+                     LostFocus="TxtFind_LostFocus"
+                     SelectionChanged="TxbFind_SelectionChanged"/>
+            <Button Name="btnSave" Content="Сохранить"
+                        Width="120" Margin="10,0,0,0" Click="btnSave_Click"
+                        Style="{StaticResource BtnStnd}"/>
+            <Button Content="Добавить" Width="120"
+                        Name="btnAdd" Margin="10,0,0,0"
+                        Click="btnAdd_Click" Style="{StaticResource BtnStnd}"/>
+            <Button Content="Печать" Width="120"
+                        Name="btnPrint" Margin="10,0,0,0"
+                        Click="btnPrint_Click" Style="{StaticResource BtnStnd}"/>
+            <Button Content="Удалить" Width="100"
+                        Name="btnDelete" HorizontalAlignment="Right" 
+                        VerticalAlignment="Center"
+                        Margin="40,0,0,0" Click="btnDelete_Click"
+                        Style="{StaticResource BtnBack}"/>
+        </StackPanel> -->
+    </Grid>
+</Page>
