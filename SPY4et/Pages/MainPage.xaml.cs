@@ -31,10 +31,29 @@ namespace SPY4et.Pages
             ClsFiltr.TxbClear(TxtFind, "Поиск");
         }
 
+        //DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.ToList();
+        //        DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "в пути").ToList();
+        //DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "не заказано").ToList();
+        //DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "оценено").ToList();
+        //DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "достаточно").ToList();
+
         private void TxtFind_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            if (TxtFind.Text != "Поиск")
+            if (TabMain.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
                 DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text)).ToList();
+
+            if (TabTotal.IsSelected == true && TxtFind.Text != "Поиск") //в проданых товарах
+                DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "достаточно").ToList();
+            
+            if (TabInWay.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
+                DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "в пути").ToList();
+
+            if (TabProcessBegin.IsSelected == true && TxtFind.Text != "Поиск") //в проданых товарах
+                DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "оценено").ToList();
+
+            if (TabMust.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
+                DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "не заказано").ToList();                       
+
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -100,7 +119,14 @@ namespace SPY4et.Pages
                 DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Count < 1).ToList();
 
             else if (stockEmpty == false)
+            {
                 DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.ToList();
+                DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "в пути").ToList();
+                DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "не заказано").ToList();
+                DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "оценено").ToList();
+                DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "достаточно").ToList();
+            }
+
         }
 
     }

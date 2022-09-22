@@ -20,6 +20,7 @@
           <Property Name="RetailCost" Type="decimal" Precision="10" Scale="2" />
           <Property Name="CostRub" Type="decimal" Precision="10" Scale="2" />
           <Property Name="Count" Type="int" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -68,6 +69,7 @@
           <Property Name="WholeCost" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="MarginWC" Type="Double" />
           <Property Name="RetailCost" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -89,6 +91,7 @@
           <EntitySetMapping Name="MainTable">
             <EntityTypeMapping TypeName="ServiceParkModel.MainTable">
               <MappingFragment StoreEntitySet="MainTable">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="RetailCost" ColumnName="RetailCost" />
                 <ScalarProperty Name="MarginWC" ColumnName="MarginWC" />
                 <ScalarProperty Name="WholeCost" ColumnName="WholeCost" />

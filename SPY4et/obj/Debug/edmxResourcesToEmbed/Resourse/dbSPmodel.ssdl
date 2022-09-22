@@ -15,6 +15,7 @@
     <Property Name="RetailCost" Type="decimal" Precision="10" Scale="2" />
     <Property Name="CostRub" Type="decimal" Precision="10" Scale="2" />
     <Property Name="Count" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

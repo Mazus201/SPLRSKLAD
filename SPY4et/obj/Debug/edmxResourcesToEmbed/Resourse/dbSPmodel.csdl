@@ -29,5 +29,6 @@
     <Property Name="WholeCost" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="MarginWC" Type="Double" />
     <Property Name="RetailCost" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

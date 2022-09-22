@@ -13,56 +13,13 @@
             <RowDefinition Height="131*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <!--<ListView Name="DtGrdDriverList" 
-                  Height="auto"
-                  Width="auto" 
-                  MinWidth="700" 
-                  MinHeight="300"
-                  Grid.Row="0" 
-                  Margin="30"
-                  HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-            <ListView.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ListView.RenderTransform>
-            <ListView.View>
-
-                <GridView AllowsColumnReorder="true"
-                  ColumnHeaderToolTip="Employee Information">
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Name}" 
-                                        Header="Наименование"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Serial}" 
-                                        Header="Серийный номер"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding CostJa}" 
-                                            Header="Цена (Юань)"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding CostRub}" 
-                                            Header="Цена (рубль)"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding SelfCost}" 
-                                            Header="Себестоимость"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding MarkrtCost}" 
-                                            Header="Рыночная цена"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding WholeCost}" 
-                                            Header="Оптовая цена"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding MarginWC}" 
-                                            Header="Наценка опт"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding RetailCost}" 
-                                            Header="Розничная цена"/>
-                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Count}" 
-                                            Header="Кол-во на складе"/>
-                </GridView>
-
-            </ListView.View>
-        </ListView>-->
+    
         <TabControl Margin="0, 5">
-            <TabItem Header="На складе"
-                     Name="TabShop"
+            <TabItem Header="Общее"
+                     Name="TabMain"
                      IsSelected="True">
                 <TabItem.Content>
-                    <DataGrid Name="DtGrAdmShop" 
+                    <DataGrid Name="DtGrAll" 
                               Height="auto"
                               Width="auto" 
                               Grid.Row="0" 
@@ -71,7 +28,8 @@
                               AutoGenerateColumns="False"
                               VerticalScrollBarVisibility="Auto"
                               HorizontalScrollBarVisibility="Auto"
-                              HorizontalAlignment="Center">
+                              HorizontalAlignment="Center"
+                              IsReadOnly="False">
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="auto" 
@@ -109,7 +67,7 @@
                     </DataGrid>
                 </TabItem.Content>
             </TabItem>
-            <TabItem Header="Общее"
+            <TabItem Header="На складе"
                      IsSelected="False"
                      Name="TabTotal">
                 <TabItem.Content>
@@ -122,6 +80,7 @@
                                   AutoGenerateColumns="False"
                                   VerticalScrollBarVisibility="Auto"
                                   HorizontalScrollBarVisibility="Auto"
+                                  IsReadOnly="False"
                                   HorizontalAlignment="Center">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="auto" 
@@ -160,9 +119,9 @@
             </TabItem>
             <TabItem Header="В пути"
                      IsSelected="False"
-                     Name="TabTotal12">
+                     Name="TabInWay">
                 <TabItem.Content>
-                    <DataGrid Name="DtGrAdmTotal12" 
+                    <DataGrid Name="DtGrInWay" 
                                   Height="auto"
                                   Width="auto" 
                                   Grid.Row="0" 
@@ -170,6 +129,7 @@
                                   Margin="10, 5, 10, 5"
                                   AutoGenerateColumns="False"
                                   VerticalScrollBarVisibility="Auto"
+                                  IsReadOnly="False"
                                   HorizontalScrollBarVisibility="Auto"
                                   HorizontalAlignment="Center">
                         <DataGrid.Columns>
@@ -209,9 +169,9 @@
             </TabItem>
             <TabItem Header="Оценено"
                      IsSelected="False"
-                     Name="TabSold">
+                     Name="TabProcessBegin">
                 <TabItem.Content>
-                    <DataGrid Name="DtGrAdmSell" 
+                    <DataGrid Name="DtGrProcessBegin" 
                                   Height="auto"
                                   Width="auto" 
                                   Grid.Row="0" 
@@ -219,6 +179,7 @@
                                   Margin="10, 5, 10, 5"
                                   AutoGenerateColumns="False"
                                   VerticalScrollBarVisibility="Auto"
+                                  IsReadOnly="False"
                                   HorizontalScrollBarVisibility="Auto"
                                   HorizontalAlignment="Center">
                         <DataGrid.Columns>
@@ -258,9 +219,9 @@
             </TabItem>
             <TabItem Header="Не заказано"
                      IsSelected="False"
-                     Name="TabTotal1">
+                     Name="TabMust">
                 <TabItem.Content>
-                    <DataGrid Name="DtGrAdmTotal1" 
+                    <DataGrid Name="DtGrMust" 
                                   Height="auto"
                                   Width="auto" 
                                   Grid.Row="0" 
@@ -268,6 +229,7 @@
                                   Margin="10, 5, 10, 5"
                                   AutoGenerateColumns="False"
                                   VerticalScrollBarVisibility="Auto"
+                                  IsReadOnly="False"
                                   HorizontalScrollBarVisibility="Auto"
                                   HorizontalAlignment="Center">
                         <DataGrid.Columns>

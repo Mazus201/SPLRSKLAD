@@ -25,5 +25,6 @@ namespace SPY4et.Resourse
         public Nullable<decimal> WholeCost { get; set; }
         public Nullable<double> MarginWC { get; set; }
         public Nullable<decimal> RetailCost { get; set; }
+        public string Status { get; set; }
     }
 }
