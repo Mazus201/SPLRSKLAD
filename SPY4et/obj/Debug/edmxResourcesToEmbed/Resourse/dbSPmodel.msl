@@ -15,6 +15,11 @@
     <EntitySetMapping Name="MainTable">
       <EntityTypeMapping TypeName="ServiceParkModel.MainTable">
         <MappingFragment StoreEntitySet="MainTable">
+          <ScalarProperty Name="RetailCost" ColumnName="RetailCost" />
+          <ScalarProperty Name="MarginWC" ColumnName="MarginWC" />
+          <ScalarProperty Name="WholeCost" ColumnName="WholeCost" />
+          <ScalarProperty Name="MarkrtCost" ColumnName="MarkrtCost" />
+          <ScalarProperty Name="SelfCost" ColumnName="SelfCost" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="CostRub" ColumnName="CostRub" />
           <ScalarProperty Name="CostJa" ColumnName="CostJa" />

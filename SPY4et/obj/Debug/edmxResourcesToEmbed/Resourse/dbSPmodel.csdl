@@ -24,5 +24,10 @@
     <Property Name="CostJa" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="CostRub" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="Count" Type="Int32" />
+    <Property Name="SelfCost" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="MarkrtCost" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="WholeCost" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="MarginWC" Type="Double" />
+    <Property Name="RetailCost" Type="Decimal" Precision="10" Scale="2" />
   </EntityType>
 </Schema>

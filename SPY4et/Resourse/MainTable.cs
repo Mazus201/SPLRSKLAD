@@ -20,5 +20,10 @@ namespace SPY4et.Resourse
         public Nullable<decimal> CostJa { get; set; }
         public Nullable<decimal> CostRub { get; set; }
         public Nullable<int> Count { get; set; }
+        public Nullable<decimal> SelfCost { get; set; }
+        public Nullable<decimal> MarkrtCost { get; set; }
+        public Nullable<decimal> WholeCost { get; set; }
+        public Nullable<double> MarginWC { get; set; }
+        public Nullable<decimal> RetailCost { get; set; }
     }
 }

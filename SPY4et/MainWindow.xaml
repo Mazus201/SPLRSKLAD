@@ -11,11 +11,6 @@
     <Grid Background="{StaticResource Brush}" MouseDown="Grid_MouseDown">
 
         <Frame Name="FrmCenter" NavigationUIVisibility="Hidden"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" 
-                Width="25" Height="25"
-                Content="x" Name="BtnBack"
-                Click="BtnBack_Click" Style="{StaticResource BtnBack}">
-        </Button>
         <StackPanel Orientation="Horizontal" Margin="2"
                     VerticalAlignment="Top" HorizontalAlignment="Right">
             <Button Height="18" Width="20" VerticalAlignment="Top"

@@ -13,14 +13,14 @@
             <RowDefinition Height="131*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <ListView Name="DtGrdDriverList" 
+        <!--<ListView Name="DtGrdDriverList" 
                   Height="auto"
                   Width="auto" 
                   MinWidth="700" 
                   MinHeight="300"
                   Grid.Row="0" 
                   Margin="30"
-                      HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                  HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -29,13 +29,6 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </ListView.RenderTransform>
-            <Style TargetType="{x:Type DataGridColumnHeader}">
-                <Setter Property="LayoutTransform">
-                    <Setter.Value>
-                        <RotateTransform Angle="270" />
-                    </Setter.Value>
-                </Setter>
-            </Style>
             <ListView.View>
 
                 <GridView AllowsColumnReorder="true"
@@ -48,15 +41,354 @@
                                             Header="Цена (Юань)"/>
                     <GridViewColumn Width="auto" DisplayMemberBinding="{Binding CostRub}" 
                                             Header="Цена (рубль)"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding SelfCost}" 
+                                            Header="Себестоимость"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding MarkrtCost}" 
+                                            Header="Рыночная цена"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding WholeCost}" 
+                                            Header="Оптовая цена"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding MarginWC}" 
+                                            Header="Наценка опт"/>
+                    <GridViewColumn Width="auto" DisplayMemberBinding="{Binding RetailCost}" 
+                                            Header="Розничная цена"/>
                     <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Count}" 
                                             Header="Кол-во на складе"/>
                 </GridView>
 
             </ListView.View>
-        </ListView>
-        <StackPanel Orientation="Horizontal" Margin="30,0,0,0" 
-                        Grid.Row="1" HorizontalAlignment="Center">
-            <TextBox Name="TxtFind"
+        </ListView>-->
+        <TabControl Margin="0, 5">
+            <TabItem Header="На складе"
+                     Name="TabShop"
+                     IsSelected="True">
+                <TabItem.Content>
+                    <DataGrid Name="DtGrAdmShop" 
+                              Height="auto"
+                              Width="auto" 
+                              Grid.Row="0" 
+                              CanUserAddRows="False"
+                              Margin="10, 5, 10, 5"
+                              AutoGenerateColumns="False"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Auto"
+                              HorizontalAlignment="Center">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Name}" 
+                                        Header="Наименование"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Serial}" 
+                                        Header="Серийный номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostJa}" 
+                                            Header="Цена (Юань)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostRub}" 
+                                            Header="Цена (рубль)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding SelfCost}" 
+                                            Header="Себестоимость"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarkrtCost}" 
+                                            Header="Рыночная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding WholeCost}" 
+                                            Header="Оптовая цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarginWC}" 
+                                            Header="Наценка опт"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding RetailCost}" 
+                                            Header="Розничная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во на складе"/>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="Общее"
+                     IsSelected="False"
+                     Name="TabTotal">
+                <TabItem.Content>
+                    <DataGrid Name="DtGrAdmTotal" 
+                                  Height="auto"
+                                  Width="auto" 
+                                  Grid.Row="0" 
+                                  CanUserAddRows="False"
+                                  Margin="10, 5, 10, 5"
+                                  AutoGenerateColumns="False"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  HorizontalAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Name}" 
+                                        Header="Наименование"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Serial}" 
+                                        Header="Серийный номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostJa}" 
+                                            Header="Цена (Юань)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostRub}" 
+                                            Header="Цена (рубль)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding SelfCost}" 
+                                            Header="Себестоимость"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarkrtCost}" 
+                                            Header="Рыночная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding WholeCost}" 
+                                            Header="Оптовая цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarginWC}" 
+                                            Header="Наценка опт"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding RetailCost}" 
+                                            Header="Розничная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во на складе"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="В пути"
+                     IsSelected="False"
+                     Name="TabTotal12">
+                <TabItem.Content>
+                    <DataGrid Name="DtGrAdmTotal12" 
+                                  Height="auto"
+                                  Width="auto" 
+                                  Grid.Row="0" 
+                                  CanUserAddRows="False"
+                                  Margin="10, 5, 10, 5"
+                                  AutoGenerateColumns="False"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  HorizontalAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Name}" 
+                                        Header="Наименование"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Serial}" 
+                                        Header="Серийный номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostJa}" 
+                                            Header="Цена (Юань)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostRub}" 
+                                            Header="Цена (рубль)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding SelfCost}" 
+                                            Header="Себестоимость"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarkrtCost}" 
+                                            Header="Рыночная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding WholeCost}" 
+                                            Header="Оптовая цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarginWC}" 
+                                            Header="Наценка опт"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding RetailCost}" 
+                                            Header="Розничная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во на складе"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="Оценено"
+                     IsSelected="False"
+                     Name="TabSold">
+                <TabItem.Content>
+                    <DataGrid Name="DtGrAdmSell" 
+                                  Height="auto"
+                                  Width="auto" 
+                                  Grid.Row="0" 
+                                  CanUserAddRows="False"
+                                  Margin="10, 5, 10, 5"
+                                  AutoGenerateColumns="False"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  HorizontalAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Name}" 
+                                        Header="Наименование"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Serial}" 
+                                        Header="Серийный номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostJa}" 
+                                            Header="Цена (Юань)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostRub}" 
+                                            Header="Цена (рубль)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding SelfCost}" 
+                                            Header="Себестоимость"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarkrtCost}" 
+                                            Header="Рыночная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding WholeCost}" 
+                                            Header="Оптовая цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarginWC}" 
+                                            Header="Наценка опт"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding RetailCost}" 
+                                            Header="Розничная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во на складе"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="Не заказано"
+                     IsSelected="False"
+                     Name="TabTotal1">
+                <TabItem.Content>
+                    <DataGrid Name="DtGrAdmTotal1" 
+                                  Height="auto"
+                                  Width="auto" 
+                                  Grid.Row="0" 
+                                  CanUserAddRows="False"
+                                  Margin="10, 5, 10, 5"
+                                  AutoGenerateColumns="False"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  HorizontalAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Name}" 
+                                        Header="Наименование"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Serial}" 
+                                        Header="Серийный номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostJa}" 
+                                            Header="Цена (Юань)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding CostRub}" 
+                                            Header="Цена (рубль)"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding SelfCost}" 
+                                            Header="Себестоимость"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarkrtCost}" 
+                                            Header="Рыночная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding WholeCost}" 
+                                            Header="Оптовая цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding MarginWC}" 
+                                            Header="Наценка опт"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding RetailCost}" 
+                                            Header="Розничная цена"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во на складе"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <!--<TabItem Header="Финансы">
+                <TabItem.Content>
+                    <StackPanel HorizontalAlignment="Center"
+                                Width="800">
+                        <TextBlock Text="Статистика по финансам:"
+                                   FontSize="22pt"
+                                   HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="10">
+                            <StackPanel Width="400"
+                                        Orientation="Horizontal">
+                                <TextBlock Text="Всего было потрачено денег: "
+                                           FontSize="14pt"/>
+                                <TextBlock Text=" "
+                                           FontSize="14pt"
+                                           Name="TxtSentMoney"/>
+                            </StackPanel>
+                            <StackPanel Width="400"
+                                        Orientation="Horizontal">
+                                <TextBlock Text="Всего было получено денег: "
+                                           FontSize="14pt"/>
+                                <TextBlock Text=" "
+                                           FontSize="14pt"
+                                           Name="TxtMadeMoney"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10">
+                                <TextBlock Text="Итого получаем: "
+                                            FontSize="16pt"/>
+                                <TextBlock Text=""
+                                           Name="TxtTotal"
+                                           FontSize="16pt"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10">
+                                <TextBlock Text="Самый продаваемый товар: "
+                                            FontSize="16pt"/>
+                                <TextBlock Text=""
+                                           Name="TxtPopular"
+                                           FontSize="16pt"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10">
+                                <TextBlock Text="Самый не продаваемый товар: "
+                                            FontSize="16pt"/>
+                                <TextBlock Text=""
+                                           Name="TxtUnPopular"
+                                           FontSize="16pt"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10">
+                                <TextBlock Text=""
+                                           Name="TxtConclusion"
+                                           FontSize="16pt"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>-->
+        </TabControl>
+        <StackPanel Orientation="Vertical" 
+                    Grid.Row="1" 
+                    HorizontalAlignment="Center"
+                    Width="800"
+                    Height="50"
+                    Margin="-30, -15, 0, 0">
+            
+            <StackPanel Orientation="Horizontal"
+                        Margin="5">
+                <CheckBox Name="chkEmpty" 
+                          Content="Закончились"
+                          FontWeight="Bold"
+                          FontSize="15"
+                          Margin="70, -15, 0, 0"
+                          Checked="chkEpty_Checked"
+                          Unchecked="chkEmpty_Unchecked"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="30,0,0,0" 
+                        Grid.Row="1" 
+                        HorizontalAlignment="Center">
+                <TextBox Name="TxtFind"
                      Width="170"
                      Height="25"
                      Margin="0, 1, 0, 0"
@@ -64,20 +396,21 @@
                      GotFocus="TxtFind_GotFocus"
                      LostFocus="TxtFind_LostFocus"
                      SelectionChanged="TxtFind_SelectionChanged"/>
-            <Button Name="btnSave" Content="Сохранить"
+                <Button Name="btnSave" Content="Обновить"
                         Width="120" Margin="10,0,0,0" Click="btnSave_Click"
                         Style="{StaticResource BtnStnd}"/>
-            <Button Content="Добавить" Width="120"
+                <Button Content="Добавить" Width="120"
                         Name="btnAdd" Margin="10,0,0,0"
                         Click="btnAdd_Click" Style="{StaticResource BtnStnd}"/>
-            <Button Content="Печать" Width="120"
+                <Button Content="Печать" Width="120"
                         Name="btnPrint" Margin="10,0,0,0"
                         Click="btnPrint_Click" Style="{StaticResource BtnStnd}"/>
-            <Button Content="Удалить" Width="100"
+                <Button Content="Удалить" Width="100"
                         Name="btnDelete" HorizontalAlignment="Right" 
                         VerticalAlignment="Center"
                         Margin="40,0,0,0" Click="btnDelete_Click"
                         Style="{StaticResource BtnBack}"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

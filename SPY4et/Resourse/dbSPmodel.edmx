@@ -13,6 +13,11 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Serial" Type="nvarchar" MaxLength="10" />
           <Property Name="CostJa" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="SelfCost" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MarkrtCost" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="WholeCost" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MarginWC" Type="float" />
+          <Property Name="RetailCost" Type="decimal" Precision="10" Scale="2" />
           <Property Name="CostRub" Type="decimal" Precision="10" Scale="2" />
           <Property Name="Count" Type="int" />
         </EntityType>
@@ -58,6 +63,11 @@
           <Property Name="CostJa" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="CostRub" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="Count" Type="Int32" />
+          <Property Name="SelfCost" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="MarkrtCost" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="WholeCost" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="MarginWC" Type="Double" />
+          <Property Name="RetailCost" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -79,6 +89,11 @@
           <EntitySetMapping Name="MainTable">
             <EntityTypeMapping TypeName="ServiceParkModel.MainTable">
               <MappingFragment StoreEntitySet="MainTable">
+                <ScalarProperty Name="RetailCost" ColumnName="RetailCost" />
+                <ScalarProperty Name="MarginWC" ColumnName="MarginWC" />
+                <ScalarProperty Name="WholeCost" ColumnName="WholeCost" />
+                <ScalarProperty Name="MarkrtCost" ColumnName="MarkrtCost" />
+                <ScalarProperty Name="SelfCost" ColumnName="SelfCost" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="CostRub" ColumnName="CostRub" />
                 <ScalarProperty Name="CostJa" ColumnName="CostJa" />

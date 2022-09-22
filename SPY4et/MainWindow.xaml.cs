@@ -34,18 +34,6 @@ namespace SPY4et
             FrmCenter.Navigate(new MainPage());
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                FrmCenter.GoBack();
-            }
-            catch
-            {
-                this.Close();
-            }
-        }
-
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;

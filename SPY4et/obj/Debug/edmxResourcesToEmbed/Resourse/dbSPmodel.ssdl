@@ -8,6 +8,11 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Serial" Type="nvarchar" MaxLength="10" />
     <Property Name="CostJa" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="SelfCost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="MarkrtCost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WholeCost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="MarginWC" Type="float" />
+    <Property Name="RetailCost" Type="decimal" Precision="10" Scale="2" />
     <Property Name="CostRub" Type="decimal" Precision="10" Scale="2" />
     <Property Name="Count" Type="int" />
   </EntityType>
