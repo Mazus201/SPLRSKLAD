@@ -181,42 +181,33 @@ namespace SPY4et.Pages
             if (TabMain.IsSelected == true) //в товарах на складе 
             {
                 DtGrAll.ItemsSource = null;
-                ClsFrame.Ent.SaveChanges();
-                DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text)).ToList();
-                ClsFrame.Ent.SaveChanges();
+                checkNullStock();
             }
 
             if (TabTotal.IsSelected == true) //в проданых товарах
             {
                 DtGrAdmTotal.ItemsSource = null;
-                ClsFrame.Ent.SaveChanges();
-                DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "достаточно").ToList();
-                ClsFrame.Ent.SaveChanges();
+                checkNullStock();
             }
 
             if (TabInWay.IsSelected == true) //в товарах на складе 
             {
                 DtGrInWay.ItemsSource = null;
-                ClsFrame.Ent.SaveChanges();
-                DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "в пути").ToList();
-                ClsFrame.Ent.SaveChanges();
+                checkNullStock();
             }
 
             if (TabProcessBegin.IsSelected == true) //в проданых товарах
             {
                 DtGrProcessBegin.ItemsSource = null;
-                ClsFrame.Ent.SaveChanges();
-                DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "оценено").ToList();
-                ClsFrame.Ent.SaveChanges();
+                checkNullStock();
             }
 
             if (TabMust.IsSelected == true) //в товарах на складе 
             {
                 DtGrMust.ItemsSource = null;
-                ClsFrame.Ent.SaveChanges();
-                DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "не заказано").ToList();
-                ClsFrame.Ent.SaveChanges();
+                checkNullStock();
             }
         }
+
     }
 }
