@@ -22,3 +22,7 @@ C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\bin\Debug\Ent
 C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\obj\Debug\SPY4et_Content.g.cs
 C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\obj\Debug\SPY4et.csproj.CopyComplete
+C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\obj\Debug\SPY4et.csproj.ResolveComReference.cache

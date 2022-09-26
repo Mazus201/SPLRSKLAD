@@ -14,13 +14,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SPY4et.Resourse;
 using SPY4et.Clss;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace SPY4et.Pages
 {
     /// <summary>
     /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class MainPage : Excel.Page
     {
         bool stockEmpty = false;
         public MainPage()
@@ -30,12 +32,6 @@ namespace SPY4et.Pages
 
             ClsFiltr.TxbClear(TxtFind, "Поиск");
         }
-
-        //DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.ToList();
-        //        DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "в пути").ToList();
-        //DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "не заказано").ToList();
-        //DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "оценено").ToList();
-        //DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "достаточно").ToList();
 
         private void TxtFind_SelectionChanged(object sender, RoutedEventArgs e)
         {
@@ -54,7 +50,23 @@ namespace SPY4et.Pages
 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
+            if (TabMain.IsSelected == true)
+                exportToExcel(TabMain, DtGrAll);
 
+            if (TabTotal.IsSelected == true)
+                exportToExcel(TabTotal, DtGrAdmTotal);
+
+            if (TabInWay.IsSelected == true)
+                exportToExcel(TabInWay, DtGrInWay);
+
+            if (TabProcessBegin.IsSelected == true)
+                exportToExcel(TabProcessBegin, DtGrProcessBegin);
+
+            if (TabMust.IsSelected == true)
+                exportToExcel(TabMust, DtGrMust);
+
+            DtGrAll.SelectedItems.Clear();
+            //3210 84955331010
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -72,17 +84,6 @@ namespace SPY4et.Pages
             ClsFiltr.TxbLost(TxtFind, "Поиск");
         }
 
-        //private void chkEpty_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    if (chkEmpty.IsChecked == true)
-        //        stockEmpty = true;
-        //}
-        //private void chkEmpty_Unchecked(object sender, RoutedEventArgs e)
-        //{
-        //    if (chkEmpty.IsChecked == false)
-        //        stockEmpty = false;
-        //}
-
         public void checkNullStock()
         {
             if (stockEmpty == true)
@@ -96,6 +97,7 @@ namespace SPY4et.Pages
                 DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "оценено").ToList();
                 DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Status == "достаточно").ToList();
             }
+            DtGrAll.SelectedItems.Clear();
 
         }
 
@@ -115,6 +117,7 @@ namespace SPY4et.Pages
 
             if (TabMust.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
                 DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "не заказано").ToList();
+            DtGrAll.SelectedItems.Clear();
         }
 
         public void deleteData()
@@ -171,6 +174,7 @@ namespace SPY4et.Pages
                     ClsFrame.Ent.SaveChanges();
 
                 }
+                DtGrAll.SelectedItems.Clear();
             }
             catch
             {
@@ -182,32 +186,102 @@ namespace SPY4et.Pages
             {
                 DtGrAll.ItemsSource = null;
                 checkNullStock();
+                DtGrAll.SelectedItems.Clear();
             }
 
             if (TabTotal.IsSelected == true) //в проданых товарах
             {
                 DtGrAdmTotal.ItemsSource = null;
                 checkNullStock();
+                DtGrAll.SelectedItems.Clear();
             }
 
             if (TabInWay.IsSelected == true) //в товарах на складе 
             {
                 DtGrInWay.ItemsSource = null;
                 checkNullStock();
+                DtGrAll.SelectedItems.Clear();
             }
 
             if (TabProcessBegin.IsSelected == true) //в проданых товарах
             {
                 DtGrProcessBegin.ItemsSource = null;
                 checkNullStock();
+                DtGrAll.SelectedItems.Clear();
             }
 
             if (TabMust.IsSelected == true) //в товарах на складе 
             {
                 DtGrMust.ItemsSource = null;
                 checkNullStock();
+                DtGrAll.SelectedItems.Clear();
             }
+
         }
 
+        public void exportToExcel(TabItem tabItem, DataGrid dataGrid)
+        {
+            Excel.Application excel = new Excel.Application();
+            excel.Visible = true;
+            Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+            Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
+
+            if (tabItem.IsSelected == true)
+            {
+                if (dataGrid.SelectedItems.Count < 1)
+                {
+
+                    for (int j = 0; j < dataGrid.Columns.Count; j++)
+                    {
+                        Range myRange = (Range)sheet1.Cells[1, j + 1];
+                        sheet1.Cells[1, j + 1].Font.Bold = true;
+                        sheet1.Columns[j + 1].ColumnWidth = 15;
+                        myRange.Value2 = dataGrid.Columns[j].Header;
+                    }
+                    for (int i = 0; i < dataGrid.Columns.Count; i++)
+                    {
+                        for (int j = 0;j < dataGrid.Items.Count && j < 17; j++)
+                        {
+                            TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
+                            Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
+                            myRange.Value2 = b.Text;
+                        }
+                    }
+
+                }
+                else if (dataGrid.SelectedItems.Count > 0)
+                {
+                    for (int j = 0; j < dataGrid.Columns.Count; j++)
+                    {
+                        Range myRange = (Range)sheet1.Cells[1, j + 1];
+                        sheet1.Cells[1, j + 1].Font.Bold = true;
+                        sheet1.Columns[j + 1].ColumnWidth = 15;
+                        myRange.Value2 = dataGrid.Columns[j].Header;
+                    }
+                    for (int i = 0; i < dataGrid.Columns.Count; i++)
+                    {
+                        for (int j = 0; j < dataGrid.SelectedItems.Count && j < 17; j++)
+                        {
+                            TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
+                            Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
+                            myRange.Value2 = b.Text;
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        public HeaderFooter LeftHeader => throw new NotImplementedException();
+
+        public HeaderFooter CenterHeader => throw new NotImplementedException();
+
+        public HeaderFooter RightHeader => throw new NotImplementedException();
+
+        public HeaderFooter LeftFooter => throw new NotImplementedException();
+
+        public HeaderFooter CenterFooter => throw new NotImplementedException();
+
+        public HeaderFooter RightFooter => throw new NotImplementedException();
     }
 }
