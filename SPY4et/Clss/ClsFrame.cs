@@ -13,5 +13,6 @@ namespace SPY4et.Clss
     {
         public static Frame FrmBody;
         public static ServiceParkEntities Ent;
+        public static SPUserEntities EntUser;
     }
 }

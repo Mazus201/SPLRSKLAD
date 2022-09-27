@@ -357,7 +357,7 @@
                 <Button Content="Добавить" Width="120"
                         Name="btnAdd" Margin="10,0,0,0"
                         Click="btnAdd_Click" Style="{StaticResource BtnStnd}"/>
-                <Button Content="Печать" Width="120"
+                <Button Content="В Excel" Width="120"
                         Name="btnPrint" Margin="10,0,0,0"
                         Click="btnPrint_Click" Style="{StaticResource BtnStnd}"/>
                 <Button Content="Удалить" Width="100" 

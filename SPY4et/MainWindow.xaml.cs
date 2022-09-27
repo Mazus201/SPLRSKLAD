@@ -30,9 +30,10 @@ namespace SPY4et
             InitializeComponent();
 
             ClsFrame.Ent = new ServiceParkEntities();
+            ClsFrame.EntUser = new SPUserEntities();
 
             ClsFrame.FrmBody = FrmCenter;
-            FrmCenter.Navigate(new MainPage());
+            FrmCenter.Navigate(new Auth());
         }
 
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
