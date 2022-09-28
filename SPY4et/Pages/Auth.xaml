@@ -9,6 +9,10 @@
       Title="Auth">
 
     <Grid>
+            <StackPanel Height="450" VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Image Source="/Resourse\Снимок экрана 2022-02-02 в 00.09.14.png"
+                       Width="200"/>
         <Border Height="220" 
                 Width="250" 
                 Background="#4C000000" 
@@ -25,23 +29,27 @@
                     <TextBox FontSize="16pt" 
                              x:Name="TxbLogin" 
                              Foreground="LightGray" 
-                             Width="200"
-                             Text="Инспектор" 
+                             Width="190"
+                             Text="Логин" 
                              GotFocus="TxbLogin_GotFocus"
                              LostFocus="TxbLogin_LostFocus" 
-                             Height="32"/>
+                             Height="32"
+                             Template="{StaticResource TextBoxBaseControlTemplate}"/>
                     <Border Height="3" 
+                            Width="170"
                             Name="BdLogin" 
-                            Margin="0, -12, 0, 0"
+                            Margin="0, -14, 0, 0"
                             Visibility="Collapsed" 
                             Background="Red"/>
                     <PasswordBox FontSize="16pt"
                                  Name="TxbPass" 
-                                 Width="200"
-                                 Height="32"/>
+                                 Width="190"
+                                 Height="32"
+                                 Template="{StaticResource PasswordBoxBaseControlTemplate}"/>
                     <Border Height="3" 
+                            Width="170"
                             Name="BdPass" 
-                            Margin="0, -10, 0, 0"
+                            Margin="0, -6, 0, 0"
                             Visibility="Collapsed" 
                             Background="Red"/>
                 </StackPanel>
@@ -52,9 +60,12 @@
                             Name="BtnAuth"
                             Click="BtnAuth_Click"  
                             Content="ВОЙТИ"
-                            Style="{StaticResource BtnStnd}"/>
+                            Foreground="#aaaaaaaa"
+                            Style="{DynamicResource RoundCorner}" />
                 </StackPanel>
             </StackPanel>
+                
         </Border>
+            </StackPanel>
     </Grid>
 </Page>

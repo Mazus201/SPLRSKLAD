@@ -30,19 +30,19 @@ namespace SPY4et.Pages
 
         private void TxbLogin_GotFocus(object sender, RoutedEventArgs e)
         {
-            ClsFiltr.TxbGot(TxbLogin, "Инспектор");
+            ClsFiltr.TxbGot(TxbLogin, "Логин");
         }
 
         private void TxbLogin_LostFocus(object sender, RoutedEventArgs e)
         {
-            ClsFiltr.TxbLost(TxbLogin, "Инспектор");
+            ClsFiltr.TxbLost(TxbLogin, "Логин");
         }
 
         private void BtnAuth_Click(object sender, RoutedEventArgs e)
         {
             var user = ClsFrame.EntUser.User.FirstOrDefault(x => x.Password == TxbPass.Password && x.Login == TxbLogin.Text);
 
-            if (TxbLogin.Text == "Инспектор" /*|| TxbPass.Text == "Пароль"*/)
+            if (TxbLogin.Text == "Логин" /*|| TxbPass.Text == "Пароль"*/)
             {
                 BdLogin.Visibility = Visibility.Visible;
                 BdPass.Visibility = Visibility.Visible;
@@ -78,7 +78,7 @@ namespace SPY4et.Pages
                 CountTry = 0;
             }
 
-            ClsFiltr.TxbClear(TxbLogin, "Инспектор");
+            ClsFiltr.TxbClear(TxbLogin, "Логин");
             TxbPass.Clear();
             //ClsFiltr.TxbClear(TxbPass, "Пароль");
         }

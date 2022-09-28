@@ -283,5 +283,10 @@ namespace SPY4et.Pages
         public HeaderFooter CenterFooter => throw new NotImplementedException();
 
         public HeaderFooter RightFooter => throw new NotImplementedException();
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            ClsFrame.FrmBody.Navigate(new Auth());
+        }
     }
 }
