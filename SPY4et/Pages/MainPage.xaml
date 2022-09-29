@@ -29,7 +29,7 @@
                               VerticalScrollBarVisibility="Auto"
                               HorizontalScrollBarVisibility="Auto"
                               HorizontalAlignment="Center"
-                              IsReadOnly="False">
+                              IsReadOnly="False" SelectionChanged="DtGrAll_SelectionChanged">
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="auto" 
