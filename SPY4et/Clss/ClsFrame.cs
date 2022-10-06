@@ -12,7 +12,7 @@ namespace SPY4et.Clss
     internal class ClsFrame
     {
         public static Frame FrmBody;
-        public static ServiceParkEntities Ent;
-        public static SPUserEntities EntUser;
+        public static SPTheDBEntities Ent;
+        public static UserInfoEntities EntUser;
     }
 }

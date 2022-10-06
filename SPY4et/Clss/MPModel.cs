@@ -73,22 +73,6 @@ namespace SPY4et.Clss
                         myRange.Value2 = dataGrid.Columns[j].Header;
                     }
 
-                    int t = 0;
-                    List<int> array = new List<int>(100);
-
-                    if (dataGrid.SelectedCells.Count > 1)
-                    {
-                        for (int j = 0; j < dataGrid.Columns.Count - 1; j++)
-                        {
-                            int index = 0;
-                            if (dataGrid.SelectedIndex != -1)
-                            {
-                                index++;
-                                array.Add(dataGrid.SelectedIndex);
-                            }
-                        }
-                    }
-
                     for (int i = 0; i < dataGrid.Columns.Count; i++)
                     {
                         for (int j = 0; j < dataGrid.SelectedItems.Count && j < 17; j++)
@@ -103,16 +87,5 @@ namespace SPY4et.Clss
 
         }
 
-        public HeaderFooter LeftHeader => throw new NotImplementedException();
-
-        public HeaderFooter CenterHeader => throw new NotImplementedException();
-
-        public HeaderFooter RightHeader => throw new NotImplementedException();
-
-        public HeaderFooter LeftFooter => throw new NotImplementedException();
-
-        public HeaderFooter CenterFooter => throw new NotImplementedException();
-
-        public HeaderFooter RightFooter => throw new NotImplementedException();
     }
 }

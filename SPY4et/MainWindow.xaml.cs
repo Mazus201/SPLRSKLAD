@@ -29,8 +29,8 @@ namespace SPY4et
         {
             InitializeComponent();
 
-            ClsFrame.Ent = new ServiceParkEntities();
-            ClsFrame.EntUser = new SPUserEntities();
+            ClsFrame.Ent = new SPTheDBEntities();
+            ClsFrame.EntUser = new UserInfoEntities();
 
             ClsFrame.FrmBody = FrmCenter;
             FrmCenter.Navigate(new Auth());

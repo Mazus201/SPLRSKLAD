@@ -24,7 +24,6 @@ namespace SPY4et.Pages
     /// </summary>
     public partial class MainPage : Excel.Page
     {
-        bool stockEmpty = false;
         public MainPage()
         {
             InitializeComponent();
@@ -84,57 +83,6 @@ namespace SPY4et.Pages
             ClsFiltr.TxbLost(TxtFind, "Поиск");
         }
 
-        
-
-        public void loadData()
-        {
-            if (TabMain.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
-                DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text)).ToList();
-
-            if (TabTotal.IsSelected == true && TxtFind.Text != "Поиск") //в проданых товарах
-                DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "достаточно").ToList();
-
-            if (TabInWay.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
-                DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "в пути").ToList();
-
-            if (TabProcessBegin.IsSelected == true && TxtFind.Text != "Поиск") //в проданых товарах
-                DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "оценено").ToList();
-
-            if (TabMust.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
-                DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "не заказано").ToList();
-            DtGrAll.SelectedItems.Clear();
-        }
-
-        public void deleteData()
-        {
-            try
-            {
-                MPModel.DeleteData(DtGrAll);
-                MPModel.DeleteData(DtGrAdmTotal);
-                MPModel.DeleteData(DtGrInWay);
-                MPModel.DeleteData(DtGrMust);
-                MPModel.DeleteData(DtGrProcessBegin);
-                
-                DtGrAll.SelectedItems.Clear();
-            }
-            catch
-            {
-
-            }
-            ClsFiltr.TxbClear(TxtFind, "Поиск");
-
-            MPModel.UpdateDate(DtGrAll, TabMain, DtGrAll);
-            checkNullStock();
-            MPModel.UpdateDate(DtGrAdmTotal, TabTotal, DtGrAll);
-            checkNullStock();
-            MPModel.UpdateDate(DtGrInWay, TabInWay, DtGrAll);
-            checkNullStock();
-            MPModel.UpdateDate(DtGrProcessBegin, TabProcessBegin, DtGrAll);
-            checkNullStock();
-            MPModel.UpdateDate(DtGrMust, TabMust, DtGrAll);
-            checkNullStock();
-        }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             ClsFrame.FrmBody.Navigate(new Auth());
@@ -167,6 +115,55 @@ namespace SPY4et.Pages
             }
             DtGrAll.SelectedItems.Clear();
 
+        }
+
+        public void deleteData()
+        {
+            try
+            {
+                MPModel.DeleteData(DtGrAll);
+                MPModel.DeleteData(DtGrAdmTotal);
+                MPModel.DeleteData(DtGrInWay);
+                MPModel.DeleteData(DtGrMust);
+                MPModel.DeleteData(DtGrProcessBegin);
+
+                DtGrAll.SelectedItems.Clear();
+            }
+            catch
+            {
+
+            }
+            ClsFiltr.TxbClear(TxtFind, "Поиск");
+
+            MPModel.UpdateDate(DtGrAll, TabMain, DtGrAll);
+            checkNullStock();
+            MPModel.UpdateDate(DtGrAdmTotal, TabTotal, DtGrAll);
+            checkNullStock();
+            MPModel.UpdateDate(DtGrInWay, TabInWay, DtGrAll);
+            checkNullStock();
+            MPModel.UpdateDate(DtGrProcessBegin, TabProcessBegin, DtGrAll);
+            checkNullStock();
+            MPModel.UpdateDate(DtGrMust, TabMust, DtGrAll);
+            checkNullStock();
+        }
+
+        public void loadData()
+        {
+            if (TabMain.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
+                DtGrAll.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text)).ToList();
+
+            if (TabTotal.IsSelected == true && TxtFind.Text != "Поиск") //в проданых товарах
+                DtGrAdmTotal.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "достаточно").ToList();
+
+            if (TabInWay.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
+                DtGrInWay.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "в пути").ToList();
+
+            if (TabProcessBegin.IsSelected == true && TxtFind.Text != "Поиск") //в проданых товарах
+                DtGrProcessBegin.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "оценено").ToList();
+
+            if (TabMust.IsSelected == true && TxtFind.Text != "Поиск") //в товарах на складе 
+                DtGrMust.ItemsSource = ClsFrame.Ent.MainTable.Where(x => x.Name.Contains(TxtFind.Text) && x.Status == "не заказано").ToList();
+            DtGrAll.SelectedItems.Clear();
         }
 
         public HeaderFooter LeftHeader => throw new NotImplementedException();
