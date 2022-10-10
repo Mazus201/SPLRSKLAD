@@ -13,10 +13,10 @@ namespace SPY4et.Resourse
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UserInfoEntities : DbContext
+    public partial class UserInfoEntities1 : DbContext
     {
-        public UserInfoEntities()
-            : base("name=UserInfoEntities")
+        public UserInfoEntities1()
+            : base("name=UserInfoEntities1")
         {
         }
     

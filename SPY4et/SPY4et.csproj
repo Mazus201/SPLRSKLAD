@@ -76,21 +76,6 @@
     <Compile Include="Resourse\MainTable.cs">
       <DependentUpon>ModelSPLR.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resourse\ModelLoginDate.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelLoginDate.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Resourse\ModelLoginDate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelLoginDate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Resourse\ModelLoginDate.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelLoginDate.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Resourse\ModelSPLR.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +91,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelSPLR.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Resourse\ModelUserLogin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelUserLogin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resourse\ModelUserLogin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelUserLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resourse\ModelUserLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelUserLogin.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Resourse\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>ModelSPLR.tt</DependentUpon>
     </Compile>
@@ -113,25 +113,10 @@
       <DependentUpon>ModelSPLR.tt</DependentUpon>
     </Compile>
     <Compile Include="Resourse\sysdiagrams.cs">
-      <DependentUpon>ModelLoginDate.tt</DependentUpon>
+      <DependentUpon>ModelUserLogin.tt</DependentUpon>
     </Compile>
     <Compile Include="Resourse\User.cs">
-      <DependentUpon>ModelLoginDate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Resourse\UserModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Resourse\UserModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Resourse\UserModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserModel.edmx</DependentUpon>
+      <DependentUpon>ModelUserLogin.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -180,26 +165,19 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="Resourse\UserModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <EntityDeploy Include="Resourse\ModelSPLR.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelSPLR.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <EntityDeploy Include="Resourse\ModelLoginDate.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelLoginDate.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Resourse\ModelLoginDate.edmx.diagram">
-      <DependentUpon>ModelLoginDate.edmx</DependentUpon>
-    </None>
     <None Include="Resourse\ModelSPLR.edmx.diagram">
       <DependentUpon>ModelSPLR.edmx</DependentUpon>
     </None>
-    <None Include="Resourse\UserModel.edmx.diagram">
-      <DependentUpon>UserModel.edmx</DependentUpon>
+    <EntityDeploy Include="Resourse\ModelUserLogin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelUserLogin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Resourse\ModelUserLogin.edmx.diagram">
+      <DependentUpon>ModelUserLogin.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -209,16 +187,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resourse\ModelLoginDate.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelLoginDate.edmx</DependentUpon>
-      <LastGenOutput>ModelLoginDate.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Resourse\ModelLoginDate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelLoginDate.edmx</DependentUpon>
-      <LastGenOutput>ModelLoginDate.cs</LastGenOutput>
-    </Content>
     <Content Include="Resourse\ModelSPLR.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelSPLR.edmx</DependentUpon>
@@ -229,15 +197,15 @@
       <DependentUpon>ModelSPLR.edmx</DependentUpon>
       <LastGenOutput>ModelSPLR.cs</LastGenOutput>
     </Content>
-    <Content Include="Resourse\UserModel.Context.tt">
+    <Content Include="Resourse\ModelUserLogin.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-      <LastGenOutput>UserModel.Context.cs</LastGenOutput>
+      <DependentUpon>ModelUserLogin.edmx</DependentUpon>
+      <LastGenOutput>ModelUserLogin.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Resourse\UserModel.tt">
+    <Content Include="Resourse\ModelUserLogin.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserModel.edmx</DependentUpon>
-      <LastGenOutput>UserModel.cs</LastGenOutput>
+      <DependentUpon>ModelUserLogin.edmx</DependentUpon>
+      <LastGenOutput>ModelUserLogin.cs</LastGenOutput>
     </Content>
     <Resource Include="Resourse\Снимок экрана 2022-02-02 в 00.09.14.png" />
   </ItemGroup>

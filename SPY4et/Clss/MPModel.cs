@@ -65,6 +65,7 @@ namespace SPY4et.Clss
                 }
                 else if (dataGrid.SelectedItems.Count > 0)
                 {
+                    
                     for (int j = 0; j < dataGrid.Columns.Count; j++)
                     {
                         Range myRange = (Range)sheet1.Cells[1, j + 1];
@@ -73,13 +74,17 @@ namespace SPY4et.Clss
                         myRange.Value2 = dataGrid.Columns[j].Header;
                     }
 
+                    var array = new List<int>();
                     for (int i = 0; i < dataGrid.Columns.Count; i++)
                     {
-                        for (int j = 0; j < dataGrid.SelectedItems.Count && j < 17; j++)
+                        for (int k = 0; k <= dataGrid.Items.Count && k < 17; k++)
                         {
-                            TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
-                            Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
-                            myRange.Value2 = b.Text;
+                            for (int j = 0; j < dataGrid.SelectedItems.Count && j < 17; j++)
+                            {
+                                TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
+                                Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
+                                myRange.Value2 = b.Text;
+                            }
                         }
                     }
                 }

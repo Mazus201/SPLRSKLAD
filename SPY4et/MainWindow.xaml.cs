@@ -30,7 +30,7 @@ namespace SPY4et
             InitializeComponent();
 
             ClsFrame.Ent = new SPTheDBEntities();
-            ClsFrame.EntUser = new UserInfoEntities();
+            ClsFrame.EntUser = new UserInfoEntities1();
 
             ClsFrame.FrmBody = FrmCenter;
             FrmCenter.Navigate(new Auth());

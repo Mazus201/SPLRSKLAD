@@ -51,7 +51,7 @@
                                                 Binding="{Binding SelfCost}" 
                                             Header="Себестоимость"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding MarkrtCost}" 
+                                                Binding="{Binding MarktCost}" 
                                             Header="Рыночная цена"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding WholeCost}" 

@@ -8,11 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modellogindate.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modellogindate.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modelsplr.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modelsplr.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/usermodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/usermodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modeluserlogin.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modeluserlogin.tt")]
 
 
