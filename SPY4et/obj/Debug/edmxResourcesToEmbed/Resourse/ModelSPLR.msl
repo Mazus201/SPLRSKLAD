@@ -4,11 +4,11 @@
     <EntitySetMapping Name="MainTable">
       <EntityTypeMapping TypeName="SPTheDBModel.MainTable">
         <MappingFragment StoreEntitySet="MainTable">
+          <ScalarProperty Name="MarginRetail" ColumnName="MarginRetail" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Serial" ColumnName="Serial" />
           <ScalarProperty Name="CostJa" ColumnName="CostJa" />
-          <ScalarProperty Name="CostRub" ColumnName="CostRub" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="SelfCost" ColumnName="SelfCost" />
           <ScalarProperty Name="MarktCost" ColumnName="MarktCost" />

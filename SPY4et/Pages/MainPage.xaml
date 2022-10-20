@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SPY4et.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="HelloWorld">
 
     <Grid>
@@ -36,36 +36,35 @@
                                                 Binding="{Binding Name}" 
                                         Header="Наименование"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding Status}" 
-                                        Header="Состояние"/>
-                            <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding Serial}" 
-                                        Header="Серийный номер"/>
+                                        Header="Номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding CostJa}" 
-                                            Header="Цена (Юань)"/>
-                            <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding CostRub}" 
-                                            Header="Цена (рубль)"/>
+                                            Header="Цена, юани"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding SelfCost}" 
-                                            Header="Себестоимость"/>
+                                            Header="СС"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding MarktCost}" 
-                                            Header="Рыночная цена"/>
+                                            Header="Цена рыночн"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding WholeCost}" 
-                                            Header="Оптовая цена"/>
+                                            Header="Цена опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding MarginWC}" 
                                             Header="Наценка опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding RetailCost}" 
-                                            Header="Розничная цена"/>
+                                            Header="Цена розничн"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding Count}" 
-                                            Header="Кол-во на складе"/>
-                            
+                                                Binding="{Binding MarginRetail}" 
+                                            Header="Наценка розн"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Status}" 
+                                        Header="Состояние"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem.Content>
@@ -91,31 +90,31 @@
                                         Header="Наименование"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding Serial}" 
-                                        Header="Серийный номер"/>
+                                        Header="Номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding CostJa}" 
-                                            Header="Цена (Юань)"/>
-                            <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding CostRub}" 
-                                            Header="Цена (рубль)"/>
+                                            Header="Цена, юани"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding SelfCost}" 
-                                            Header="Себестоимость"/>
+                                            Header="СС"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding MarkrtCost}" 
-                                            Header="Рыночная цена"/>
+                                                Binding="{Binding MarktCost}" 
+                                            Header="Цена рыночн"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding WholeCost}" 
-                                            Header="Оптовая цена"/>
+                                            Header="Цена опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding MarginWC}" 
                                             Header="Наценка опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding RetailCost}" 
-                                            Header="Розничная цена"/>
+                                            Header="Цена розничн"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding Count}" 
-                                            Header="Кол-во на складе"/>
+                                                Binding="{Binding MarginRetail}" 
+                                            Header="Наценка розн"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem.Content>
@@ -141,31 +140,31 @@
                                         Header="Наименование"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding Serial}" 
-                                        Header="Серийный номер"/>
+                                        Header="Номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding CostJa}" 
-                                            Header="Цена (Юань)"/>
-                            <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding CostRub}" 
-                                            Header="Цена (рубль)"/>
+                                            Header="Цена, юани"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding SelfCost}" 
-                                            Header="Себестоимость"/>
+                                            Header="СС"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding MarkrtCost}" 
-                                            Header="Рыночная цена"/>
+                                                Binding="{Binding MarktCost}" 
+                                            Header="Цена рыночн"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding WholeCost}" 
-                                            Header="Оптовая цена"/>
+                                            Header="Цена опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding MarginWC}" 
                                             Header="Наценка опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding RetailCost}" 
-                                            Header="Розничная цена"/>
+                                            Header="Цена розничн"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding Count}" 
-                                            Header="Кол-во на складе"/>
+                                                Binding="{Binding MarginRetail}" 
+                                            Header="Наценка розн"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem.Content>
@@ -191,31 +190,31 @@
                                         Header="Наименование"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding Serial}" 
-                                        Header="Серийный номер"/>
+                                        Header="Номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding CostJa}" 
-                                            Header="Цена (Юань)"/>
-                            <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding CostRub}" 
-                                            Header="Цена (рубль)"/>
+                                            Header="Цена, юани"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding SelfCost}" 
-                                            Header="Себестоимость"/>
+                                            Header="СС"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding MarkrtCost}" 
-                                            Header="Рыночная цена"/>
+                                                Binding="{Binding MarktCost}" 
+                                            Header="Цена рыночн"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding WholeCost}" 
-                                            Header="Оптовая цена"/>
+                                            Header="Цена опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding MarginWC}" 
                                             Header="Наценка опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding RetailCost}" 
-                                            Header="Розничная цена"/>
+                                            Header="Цена розничн"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding Count}" 
-                                            Header="Кол-во на складе"/>
+                                                Binding="{Binding MarginRetail}" 
+                                            Header="Наценка розн"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem.Content>
@@ -241,31 +240,31 @@
                                         Header="Наименование"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding Serial}" 
-                                        Header="Серийный номер"/>
+                                        Header="Номер"/>
+                            <DataGridTextColumn Width="auto" 
+                                                Binding="{Binding Count}" 
+                                            Header="Кол-во"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding CostJa}" 
-                                            Header="Цена (Юань)"/>
-                            <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding CostRub}" 
-                                            Header="Цена (рубль)"/>
+                                            Header="Цена, юани"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding SelfCost}" 
-                                            Header="Себестоимость"/>
+                                            Header="СС"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding MarkrtCost}" 
-                                            Header="Рыночная цена"/>
+                                                Binding="{Binding MarktCost}" 
+                                            Header="Цена рыночн"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding WholeCost}" 
-                                            Header="Оптовая цена"/>
+                                            Header="Цена опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding MarginWC}" 
                                             Header="Наценка опт"/>
                             <DataGridTextColumn Width="auto" 
                                                 Binding="{Binding RetailCost}" 
-                                            Header="Розничная цена"/>
+                                            Header="Цена розничн"/>
                             <DataGridTextColumn Width="auto" 
-                                                Binding="{Binding Count}" 
-                                            Header="Кол-во на складе"/>
+                                                Binding="{Binding MarginRetail}" 
+                                            Header="Наценка розн"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem.Content>
@@ -335,7 +334,8 @@
         <StackPanel Orientation="Vertical" 
                     Grid.Row="1" 
                     HorizontalAlignment="Center"
-                    Width="800"
+                    MinWidth="800"
+                    MaxWidth="1000"
                     Height="50"
                     Margin="-30, -15, 0, 0">
             
@@ -352,6 +352,11 @@
                      GotFocus="TxtFind_GotFocus"
                      LostFocus="TxtFind_LostFocus"
                      SelectionChanged="TxtFind_SelectionChanged"/>
+                <Button Name="btnSaveToDB" Content="Сохранить"
+                        IsDefault="True"
+                        Foreground="#aaaaaaaa"
+                        Width="120" Margin="10,0,0,0" Click="btnSaveToDB_Click"
+                        Style="{DynamicResource RoundCorner}"/>
                 <Button Name="btnSave" Content="Обновить"
                         IsDefault="True"
                         Foreground="#aaaaaaaa"

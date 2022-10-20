@@ -5,17 +5,17 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Serial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CostJa" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="CostRub" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="Count" Type="Int32" />
     <Property Name="SelfCost" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="MarktCost" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="WholeCost" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="MarginWC" Type="Double" />
     <Property Name="RetailCost" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MarginRetail" Type="Double" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

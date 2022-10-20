@@ -10,15 +10,13 @@
 namespace SPY4et.Resourse
 {
     using System;
-    using System.Collections.Generic;
-    
+
     public partial class MainTable
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Serial { get; set; }
         public Nullable<decimal> CostJa { get; set; }
-        public Nullable<decimal> CostRub { get; set; }
         public Nullable<int> Count { get; set; }
         public Nullable<decimal> SelfCost { get; set; }
         public Nullable<decimal> MarktCost { get; set; }
@@ -26,5 +24,39 @@ namespace SPY4et.Resourse
         public Nullable<double> MarginWC { get; set; }
         public Nullable<decimal> RetailCost { get; set; }
         public string Status { get; set; }
+        public Nullable<double> MarginRetail { get; set; }
+
+        public static MainTable CreateFromData(object[] data)
+        {
+            try
+            {
+                if (data.Length != 11)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(data), $"Wrong length: {data.Length} (must be 11)");
+                }
+
+                return new MainTable
+                {
+                    Id = 0,
+                    Name = Convert.ToString(data[0]),
+                    Count = Convert.ToInt32(Convert.ToDouble(data[2])),
+                    Serial = Convert.ToString(data[1]),
+                    CostJa = Convert.ToDecimal(data[3]),
+                    SelfCost = Convert.ToDecimal(data[4]),
+                    MarktCost = Convert.ToDecimal(data[5]),
+                    WholeCost = Convert.ToDecimal(data[6]),
+                    MarginWC = Convert.ToDouble(data[7]),
+                    RetailCost = Convert.ToDecimal(data[8]),
+                    MarginRetail = Convert.ToDouble(data[9]),
+                    Status = Convert.ToString(data[10])
+                };
+            }
+            catch (Exception ex)
+            {
+                new ArgumentException(nameof(data), $"Error while trying to map table row to MainTable: {ex.Message}");
+            }
+
+            return null;
+        }
     }
 }

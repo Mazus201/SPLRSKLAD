@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:SPY4et"
         mc:Ignorable="d"
         WindowStyle="None" WindowStartupLocation="CenterScreen"
-        Title="SPLR" Height="450" Width="800"
-        MinHeight="450" MinWidth="800">
+        Title="SPLR" Height="550" Width="1000"
+        MinHeight="550" MinWidth="1000">
     <Grid Background="{StaticResource Brush}" MouseDown="Grid_MouseDown">
 
         <Frame Name="FrmCenter" NavigationUIVisibility="Hidden"/>

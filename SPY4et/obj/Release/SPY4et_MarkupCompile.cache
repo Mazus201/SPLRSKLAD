@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\obj\Release\
+C:\Users\mazus\source\repos\Складской учет SP LR\SPY4et\obj\Release\
 SPY4et
 none
 false
 TRACE
-C:\Users\MSI\source\repos\Складской учет SP LR\SPY4et\App.xaml
-2-213997779
-2-859904339
-13-1011250747
-22-1354144633
-MainWindow.xaml;Pages\MainPage.xaml;
+C:\Users\mazus\source\repos\Складской учет SP LR\SPY4et\App.xaml
+3-145286291
+4-639458986
+22-1560623808
+22-552851002
+MainWindow.xaml;Pages\Auth.xaml;Pages\MainPage.xaml;
 
-False
+True
 

@@ -8,7 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/dbspmodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/dbspmodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modelsplr.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modelsplr.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modeluserlogin.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourse/modeluserlogin.tt")]
 
 
